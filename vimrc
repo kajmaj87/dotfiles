@@ -1,3 +1,4 @@
+"" BASE SETTINGS
 " activates filetype detection
 filetype plugin indent on
 
@@ -24,7 +25,14 @@ set clipboard=unnamedplus
 endif
 
 
-" MY SETTINGS
+"" MY SETTINGS
+""" All
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
 " Reload files automatically when changed on disk
 set autoread
 
@@ -52,17 +60,8 @@ set hlsearch
 " Enable incremental searching
 set incsearch
 
-" Ignore case when searching
-"set ignorecase
-
-" Override the 'ignorecase' option if the search pattern contains upper case characters.
-"set smartcase
-
 " Turn on line numbering
 set number
-
-" Turn on file backups
-"set backup
 
 " Don't line wrap mid-word.
 set lbr
@@ -90,15 +89,21 @@ set bg=dark
 
 " Map Y to act like D and C, i.e. yank until EOL, rather than act like yy
 map Y y$
+""" Usused
+
+" Ignore case when searching
+"set ignorecase
+
+" Override the 'ignorecase' option if the search pattern contains upper case characters.
+"set smartcase
 
 " Remap VIM 0 to first non-blank character
 " map 0 ^
 
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" Turn on file backups
+"set backup
 
+"" MAPPINGS
 nmap <leader>v :e $MYVIMRC<CR>
 
 " change the mapleader from \ to ,
@@ -116,9 +121,7 @@ nnoremap <C-H> <C-W>h
 
 nmap <TAB> za
 
-" For more options see ":help option-list" and ":options".
-
-
+"" FILE SETTINGS (should be moved to ftplugin)
 " Python settings
 " setlocal means that the settings will apply only to the current buffer
 " and do not override already open ones
