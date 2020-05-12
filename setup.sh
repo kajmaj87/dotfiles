@@ -1,4 +1,5 @@
 ## vim
+mkdir -p ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/cocvimrc ~/.vim/cocvimrc
 
