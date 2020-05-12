@@ -1,5 +1,5 @@
 ## Common
-synclient VertTwoFingerScroll=1
+# synclient VertTwoFingerScroll=1
 export PATH=$PATH:/home/kajman/bin
 
 ## Aliases and functions
