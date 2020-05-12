@@ -1,14 +1,35 @@
-"" BASE SETTINGS
+"" PLUGINS
 " activates filetype detection
 filetype plugin indent on
 
-" check if light/plugin heavy config found
-if !empty(glob("$HOME/.vim/pluginrc.vim"))
-  source $HOME/.vim/pluginrc.vim
-else
-  colorscheme desert
-endif
+call plug#begin('~/.vim/plugged')
+" colorscheme
+Plug 'morhetz/gruvbox'
+" saving sessions and startup menu
+Plug 'mhinz/vim-startify'
+" nice undo tree
+Plug 'mbbill/undotree'
+" completion engine
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" language specific plugis
+" elm
+Plug 'elmcast/elm-vim'
+" python
+Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'vim-scripts/indentpython.vim'
+call plug#end()
 
+source ~/.vim/cocvimrc
+
+" Specifiy a color scheme.
+try 
+  colorscheme gruvbox
+  let g:gruvbox_contrast_dark = 'hard'
+catch
+  colorscheme desert
+endtry
+
+"" BASIC SETTINGS
 " activates syntax highlighting among other things
 syntax on
 
@@ -111,8 +132,9 @@ nmap <leader>v :e $MYVIMRC<CR>
 map <Space> <LocalLeader>
 " Quickly save your file.
 imap jk <ESC>  
-map <leader>] :bn<cr>
-map <leader>[ :bp<cr>
+map <leader>] :bn<CR>
+map <leader>[ :bp<CR>
+map <leader>u :UndotreeToggle<CR>
 
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
