@@ -1,0 +1,27 @@
+## Common
+synclient VertTwoFingerScroll=1
+export PATH=$PATH:/home/kajman/bin
+
+## Aliases and functions
+### Common
+function update_mirrors_and_system {
+  echo "Updating mirrorlist ..."
+  sudo /usr/bin/systemctl start pamac-mirrorlist.service
+  echo "Done."
+  sudo yay --pacman powerpill -Syu --noconfirm --repo
+}
+
+alias up='update_mirrors_and_system'
+alias gtypist='gtypist -bie 0'
+alias octave='octave --no-gui'
+alias o='xdg-open'
+alias iotop='sudo iotop'
+alias esptool=esptool.py
+alias nodemcu-tool=/home/kajman/projects/nodemcu/node_modules/.bin/nodemcu-tool
+alias yay='yay --pacman powerpill'
+
+### Ssh 
+
+alias rupert='ssh rupert@168.235.108.241'
+alias pi='ssh pi@192.168.1.231'
+alias pii='ssh pi@90.156.33.4 -p 41994'
