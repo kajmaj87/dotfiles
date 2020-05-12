@@ -2,6 +2,7 @@
 # ~/.bashrc
 #
 ## Defaults 
+
 [[ $- != *i* ]] && return
 
 colors() {
@@ -40,7 +41,9 @@ colors() {
 [[ -f ~/.bashrc.pi ]] && . ~/.bashrc.pi
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
 ## History settings
+
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
