@@ -1,14 +1,14 @@
 "" PLUGINS
 " activates filetype detection
 filetype plugin indent on
-
+""" Packages
 call plug#begin('~/.vim/plugged')
 " colorscheme
 Plug 'morhetz/gruvbox'
 " saving sessions and startup menu
 Plug 'mhinz/vim-startify'
 " nice undo tree
-Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
 " completion engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " language specific plugis
@@ -18,7 +18,11 @@ Plug 'elmcast/elm-vim'
 Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
 call plug#end()
-
+""" Settings
+" Mundo
+let g:mundo_preview_bottom = 1
+let g:mundo_playback_delay = 300
+let g:mundo_close_on_revert = 1
 source ~/.vim/cocvimrc
 
 " Specifiy a color scheme.
@@ -134,7 +138,7 @@ map <Space> <LocalLeader>
 imap jk <ESC>  
 map <leader>] :bn<CR>
 map <leader>[ :bp<CR>
-map <leader>u :UndotreeToggle<CR>
+map <leader>u :MundoToggle<CR>
 
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
