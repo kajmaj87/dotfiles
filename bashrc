@@ -54,6 +54,14 @@ shopt -s histappend                      # append to history, don't overwrite it
 # Save and reload the history after each command finishes - same history in all tabs
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+### Git Prompt
+if [ -f "$HOME/dotfiles/bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_THEME="Single_line_Dark"
+    echo "Sourcing git prompt file"
+    source $HOME/dotfiles/bash-git-prompt/gitprompt.sh
+fi
+
 ## Aliases and functions
 ### Common 
 
