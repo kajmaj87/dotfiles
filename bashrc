@@ -58,7 +58,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 if [ -f "$HOME/dotfiles/bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     GIT_PROMPT_THEME="Single_line_Dark"
-    echo "Sourcing git prompt file"
     source $HOME/dotfiles/bash-git-prompt/gitprompt.sh
 fi
 
