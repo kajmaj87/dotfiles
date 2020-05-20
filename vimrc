@@ -23,6 +23,9 @@ call plug#end()
 let g:mundo_preview_bottom = 1
 let g:mundo_playback_delay = 300
 let g:mundo_close_on_revert = 1
+set undofile
+set undodir=~/.vim/undo
+
 source ~/.vim/cocvimrc
 
 " Specifiy a color scheme.
