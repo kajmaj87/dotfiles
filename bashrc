@@ -49,7 +49,6 @@ eval "$(stack --bash-completion-script stack)"
 
 ## Env variables
 export EDITOR=vim
->>>>>>> Stashed changes
 
 ## History settings
 
