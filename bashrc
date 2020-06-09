@@ -42,10 +42,14 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-# Haskell GHC 
+## Haskell GHC 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 # autocompletion for stack
 eval "$(stack --bash-completion-script stack)"
+
+## Env variables
+export EDITOR=vim
+>>>>>>> Stashed changes
 
 ## History settings
 
