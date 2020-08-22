@@ -34,6 +34,7 @@ colors() {
 
 ## Source other files
 
+# copy from /etc/skel/.bashrc if not available
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 
 [[ -f ~/.bashrc.work ]] && . ~/.bashrc.work
@@ -45,7 +46,7 @@ colors() {
 ## Haskell GHC 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 # autocompletion for stack
-eval "$(stack --bash-completion-script stack)"
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && eval "$(stack --bash-completion-script stack)"
 
 ## Env variables
 export EDITOR=vim

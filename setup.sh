@@ -9,3 +9,6 @@ ln -s ~/dotfiles/bashrc ~/.bashrc
 ln -s ~/dotfiles/bashrc.manjaro ~/.bashrc.manjaro
 # better history completion when pressing up arrow
 ln -s ~/dotfiles/inputrc ~/.inputrc
+
+# init git submodules
+git submodule update --init
